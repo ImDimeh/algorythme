@@ -1,0 +1,16 @@
+body {
+  background-color: aqua;
+}
+body div.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+body div.container .stick {
+  width: 5%;
+  height: 200px;
+  background-color: darkblue;
+}
+
+/*# sourceMappingURL=style.css.map */
