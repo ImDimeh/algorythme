@@ -12,5 +12,8 @@ body div.container .stick {
   height: 200px;
   background-color: darkblue;
 }
+body div.container .stick:hover {
+  background-color: red;
+}
 
 /*# sourceMappingURL=style.css.map */
