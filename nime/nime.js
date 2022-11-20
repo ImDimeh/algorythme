@@ -6,28 +6,83 @@ let battontotal = 20;
 let player = 1 ;
 // nombre de batton choisit
 let battonNbr = 0;
+// si le tour est finit
+isEnd = 0
+function TurnEnd(){
+    IsEnd = 1
+
+    creatnew()
+    return deleteBatton()
+}
 
 function deleteBatton(){
-    console.log("hello")
+
     battontotal -= 1 ;
     battonNbr +=1
-    if(battonNbr>= 3 ){
-        console.log("au tour du joueur deux")
-        player = 2
+
+    if(isEnd ===1 && player === 1 ){
+        player = 2;
+
+        document.write("<h3> au tour du joueur "  + player  + " </h3>" );
+        battonNbr = 0
+        isEnd = 0
+        creatnew()
+    }else if (isEnd ===1 && player === 2){
+        player = 1 ;
+
+        document.write("<h3> au tour du joueur  "  + player  + " </h3>" );
+        battonNbr = 0
+        isEnd = 0
+        creatnew()
+    }else {
+
     }
+
+
+    if(battonNbr === 3 ){
+
+        if (player === 1 ){
+            player = 2;
+            console.log(player)
+            document.write("<h3> au tour du joueur "  + player  + " </h3>" );
+            battonNbr = 0
+            isEnd = 0
+        }else if (player === 2 ) {
+            player = 1 ;
+            console.log(player + " deux ")
+            document.write("<h3> au tour du joueur  "  + player  + " </h3>" );
+            battonNbr = 0
+            isEnd = 0
+        }else{
+
+        }
+    }
+
+
     creatnew()
 }
 
 function creatnew(){
     document.body.innerHTML="";
-    document.write( "<body>"
-         + "<h3> liste des battons </h3>" +
-        "<link rel=\"stylesheet\" href=\"style.css\">" +
-        "<div className=\"container\" id=\"container\">" +
-       " </div>" +
-        "<script src=\"nime.js\"></script>" +
-        "\"</body>\"");
+    document.write('<link rel="stylesheet" href="style.css">');
+    document.write("<h3> au tour du joueur "  + player  + " </h3>" );
+    document.write(
+          "<h3> liste des battons </h3>" +
 
+        "<div class=\"container\" id=\"container\">" +
+       " </div>" +
+        "<button onClick=\"deleteBatton()\"> fin de tour </button>" +
+        "<script src=\"nime.js\"></script>"
+       );
+    if(battontotal === 1 ){
+        if(player===1){
+            document.write("<h3> le joueur 2 a gagné  </h3>" );
+        }else if(player===2){
+            document.write("<h3> le joueur 1 a gagné  </h3>" );
+        }
+    }else{
+
+    }
 
 
 
@@ -35,11 +90,14 @@ function creatnew(){
         const para = document.createElement("div");
         para.setAttribute("onclick","deleteBatton()")
         para.classList.add("stick");
-        const node = document.createTextNode("stick");
-        para.appendChild(node);
+
 
         let container = document.getElementById("container");
         container.appendChild(para);
+
+
+
+
 
     }
 
@@ -50,11 +108,11 @@ for ( let batton2 = 0 ; batton2 < battontotal ; batton2++){
     const para = document.createElement("div");
     para.setAttribute("onclick","deleteBatton()")
     para.classList.add("stick");
-    const node = document.createTextNode("stick");
-    para.appendChild(node);
+
 
     let container = document.getElementById("container");
     container.appendChild(para);
+
 
 }
 

@@ -1,19 +1,16 @@
 body {
-  background-color: aqua;
+    background-color: aqua;
 }
-body div.container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 50px;
-}
-body div.container .stick {
-  width: 5%;
-  height: 200px;
-  background-color: darkblue;
-}
-body div.container .stick:hover {
-  background-color: red;
-}
+.container {
+    display: flex;
 
-/*# sourceMappingURL=style.css.map */
+    gap: 50px;
+}
+.stick {
+    width: 2%;
+    height: 75px;
+    background-color: darkblue;
+}
+.stick:hover {
+    background-color: red;
+}
